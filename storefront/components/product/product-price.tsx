@@ -53,7 +53,7 @@ export default function ProductPrice({
         <span className={`${isCard ? 'text-xs' : 'text-base'} text-muted-foreground line-through`}>
           {formattedCompareAt}
         </span>
-        <span className={`${isCard ? 'text-sm' : 'text-2xl'} font-semibold text-red-600 ${!isCard ? 'font-heading' : ''}`}>
+        <span className={`${isCard ? 'text-sm font-semibold text-foreground' : 'text-2xl font-heading font-semibold text-accent'}`}>
           {formattedPrice}
         </span>
       </div>
@@ -62,7 +62,7 @@ export default function ProductPrice({
 
   return (
     <div className="flex items-baseline">
-      <span className={`${isCard ? 'text-sm text-muted-foreground' : 'text-xl font-heading font-semibold'}`}>
+      <span className={`${isCard ? 'text-sm font-medium text-foreground' : 'text-2xl font-heading font-semibold text-foreground'}`}>
         {formattedPrice}
       </span>
     </div>

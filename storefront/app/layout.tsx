@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Lato, Inter } from 'next/font/google'
+import { Space_Grotesk, Inter } from 'next/font/google'
 import { Providers } from './providers'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
@@ -14,9 +14,9 @@ import dynamic from 'next/dynamic'
 
 const CookieConsent = dynamic(() => import('@/components/cookie-consent'))
 
-const heading = Lato({
+const heading = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 })
@@ -30,10 +30,10 @@ const body = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Store — Modern Commerce',
-    template: '%s | Store',
+    default: 'VOLTA — Future Tech, Today',
+    template: '%s | VOLTA',
   },
-  description: 'Discover curated products crafted with care. A modern ecommerce experience.',
+  description: 'Premium smartphones, laptops, smartwatches, audio and gaming gear — engineered for the next decade.',
 }
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${heading.variable} ${body.variable} dark`} suppressHydrationWarning>
       <head>
         {/* PostHog cross-origin iframe recording shim — records DOM via rrweb and forwards
             events to the parent window (admin dashboard) for session replay.
@@ -92,7 +92,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieConsent />
-          <Toaster position="bottom-right" richColors />
+          <Toaster position="bottom-right" theme="dark" richColors />
         </Providers>
       </body>
     </html>
